@@ -1,0 +1,65 @@
+% Vorlage
+\input{vorlage/vorlage}
+
+\begin{document}
+\KOMAoption{headsepline}{false}
+\KOMAoption{footsepline}{false}
+\ifthenelse{\isundefined{\jahr}}{\color{red}\Large Jahr-Kommando in metadaten.sty aktivieren}{
+    \cleardoublepage
+\rofoot{}
+\rohead{}
+\lohead{}
+    % Alternativ zu Vektorgrafik-Logos (SVG) werden Befehle zur Nutzung von Pixelgrafik-Logos (z.B. PNG) bereitgestellt,
+    % falls Inkscape nicht installiert werden, bzw. nicht der PATH-Variable hinzugefügt werden soll.
+    %! Die SVG-Version sieht im Druck deutlich besser aus.
+    \begin{minipage}{0.5\columnwidth}
+        \includesvg[width=\columnwidth]{vorlage/bilder/ba-gc-logo}
+        %\includegraphics[width=\columnwidth]{vorlage/bilder/ba-gc-logo}
+    \end{minipage}
+    \begin{minipage}{0.45\columnwidth}
+        \begin{flushright}
+            {\small nach 4BA-F.258\\}
+            %! hier Firmenlogo aktivieren!
+            %\includesvg[height=10mm,inkscapelatex=false]{bilder/firmenlogo}
+            %\includegraphics[height=10mm]{bilder/firmenlogo}
+        \end{flushright}
+    \end{minipage}
+    \par\noindent\rule{\columnwidth}{.5pt}
+
+    \textbf{\Large{Abstract zur Bachelorthesis}}
+    \begin{table}[H]
+        \centering
+        \fontsize{14pt}{15pt}
+        \begin{tabularx}{\columnwidth}{p{3.3cm} X}
+            \textbf{Studiengang:}               & \studiengang \\
+            \textbf{Name:}                      & \autoreins \\
+            \textbf{Thema:}                     & \titel \\
+            \textbf{Jahr:}                      & \jahr \\
+            \textbf{Betreuer:}                  & \begin{tabular}{@{}ll@{}}
+                                                      \betreuereins&\small(\institutioneins)\normalsize\\
+                                                      \betreuerzwei&\small(\institutionzwei)\normalsize\\
+                                                  \end{tabular}\\
+        \end{tabularx}
+    \end{table}
+    \fbox{
+        \centering
+        \parbox{0.95\columnwidth}{
+            \textbf{Ziel}\\
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\\
+
+            \textbf{Methodik}\\
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\\
+
+            \textbf{Ergebnisse}\\
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\\
+
+            \textbf{Schlussfolgerung}\\
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.\\
+
+            \textbf{Schlüsselwörter}\\
+            Lorem, ipsum, dolor, sit, amet
+        }
+    }
+
+}
+\end{document}

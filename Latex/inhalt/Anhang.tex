@@ -1,0 +1,63 @@
+%! Anhang
+
+\clearpage
+\appendix
+\clearpage
+
+%! Chapter Befehl wird umgeschrieben, um Überschriften zu verbergen
+%! Kann, falls Überschriften gewollt sind, entfernt oder erst später eingefügt werden.
+% Beginn
+\makeatletter
+\renewcommand{\chapter}[1]{%
+\par\refstepcounter{chapter}%
+\sectionmark{#1}%
+\NR@gettitle{#1}%<---------
+\addcontentsline{atoc}{chapter}{\bfseries\protect\numberline{\thechapter}{\mdseries#1}}%
+\lohead{\textnormal{#1}}%
+}
+\makeatother
+% Ende
+
+%! Anpassung der Darstellung von Abbildungen im Anhang
+%! Eine Variante auskommentieren
+%? Möglichkeit 1: ohne Nummerierung
+%\renewcommand{\bild}[4][1.0]{\begin{figure}[H]
+    %\centering
+    %\includegraphics[width=#1\columnwidth]{bilder/#2}
+    %\caption*{\bfseries Abbildung \mdseries #3}
+    %\label{#4}
+    %\end{figure}}
+
+%? Möglichkeit 2: mit Nummerierung aber nicht im Abbildungsverzeichnis
+\renewcommand{\bild}[4][1.0]{\begin{figure}[H]
+    \centering
+    \includegraphics[width=#1\columnwidth]{bilder/#2}
+    \caption[]{#3}
+    \label{#4}
+    \end{figure}}
+
+%! CD-Inhalt
+\chapter{Inhalt der CD}
+\label{cd-inhalt}
+CD mit folgenden Inhalten:
+\begin{itemize}
+    \item dieses Dokument
+    \item \LaTeX -Dateien
+    \item \href{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{YouTube-Video} als Bonus
+\end{itemize}
+\clearpage
+
+% Warnungen für vorgefertigte Dokumente deaktivieren
+\hbadness=10000
+% automatische Auswahl der Erklärungen
+\ifthenelse{\isundefined{\autorzwei}}{\input{vorlage/Erklärung/1Autor}}{%
+    \ifthenelse{\isundefined{\autordrei}}{\input{vorlage/Erklärung/2Autoren}}{%
+        \ifthenelse{\isundefined{\autorvier}}{\input{vorlage/Erklärung/3Autoren}}{\input{vorlage/Erklärung/4Autoren}}
+    }
+}
+
+%  Freigabeerklärung zur Bachelorthesis
+%! Falls nötig (z.B. bei Diplomarbeit) innerhalb der Datei Wortlaut anpassen, sowie Freigabeerklärung anpassen (erfordert Format Name, Vorname usw.)
+\ifthenelse{\isundefined{\jahr}}{}{\input{vorlage/Freigabeerklärung_Bachelorthesis}}
+% Warnungen zurücksetzen
+\hbadness=1000

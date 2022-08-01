@@ -1,0 +1,73 @@
+% main.tex - Hauptdatei der Vorlage
+% Vorlage
+\input{vorlage/vorlage}
+% vordefinierte Kommandos der Vorlage
+\input{vorlage/vorlage_subs/custom_commands}
+% Auf gleiche Art können auch eigene Kommandos in eine Datei wie 'inhalt/kommandos.tex' ausgelagert werden
+
+%Dokument-Anfang
+\begin{document}
+
+%! #########################################
+%! Inhalt der Arbeit
+\frontmatter
+
+%! automatische Auswahl der Titelseite
+\ifthenelse{\isundefined{\autorzwei}}{\include{vorlage/Titelseite_1Autor}}{\include{vorlage/Titelseite_mehrere_Autoren}}
+\ifthenelse{\isundefined{\sperre}}{}{\include{vorlage/Sperrvermerk}}
+
+\ifthenelse{\isundefined{\jahr}}{}{\input{vorlage/Platzhalter_Themenblatt}}
+
+%! Nicht benötigte Verzeichnisse hier auskommentieren
+%? Inhaltsverzeichnis
+\vfuzz=5pt
+\tableofcontents
+\newpage
+\vfuzz=0.1pt
+
+%? Abbildungsverzeichnis
+\listoffigures
+\newpage
+
+%? Tabellenverzeichnis
+\listoftables
+\newpage
+
+%? Programmcodeverzeichnis
+\listofcodes
+\newpage
+
+%? Formelverzeichnis
+\listofformeln
+\newpage
+
+%? Abkürzungsverzeichnis
+\include{inhalt/Abkürzungen}
+
+%! Hier beginnt der eigentliche Inhalt der Arbeit.
+\mainmatter
+
+%! Eine der folgenden Zeilen wieder aktivieren und entsprechende Datei ablegen
+%? druckt Firmenlogo ab Kapitel 1 in Kopfzeile - SVG ist, auch bei kleinen Grafiken, zu bevorzugen, wenn vorhanden
+%\lohead{\includesvg[height=8mm,inkscapelatex=false]{bilder/firmenlogo}}
+%\lohead{\includegraphics[height=8mm]{bilder/firmenlogo}}
+
+% Es ist möglich, die ganze Arbeit in eine Datei (z.B. "Inhalt.tex") zu schreiben,
+% allerdings empfiehlt es sich, zur besseren Strukturierung mehrere Dateien, bspw. eine pro Kapitel, zu verwenden.
+% Diese werden folgendermaßen eingebunden:
+%\include{inhalt/Inhalt}
+
+%! Doku-/Testinhalt, diese Zeile bei Nutzung der Vorlage entfernen
+\include{vorlage/Doku-Test}
+
+%? Quellen- und Literaturverzeichnis
+% Quellen neigen dazu, zu breite Zeilen durch (z.B.) schlecht umgebrochene URLs zu erzeugen, die sich kaum vermeiden lassen. --> Ignorieren
+\hfuzz=10pt
+\printbibliography[title=Quellenverzeichnis]
+\hfuzz=0.1pt
+
+%? Anhang
+\include{inhalt/Anhang}
+%!##########################################
+
+\end{document}
