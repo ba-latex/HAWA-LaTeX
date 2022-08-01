@@ -82,3 +82,8 @@
   % counterwithin=chapter
 ]{lob}
 \setuptoc{lob}{totoc}
+\renewcommand*{\exampleformat}{\hfill%
+  \examplename~\theexample%
+  \autodot{\space\space\space}
+}
+\BeforeStartingTOC[lob]{\renewcommand*\autodot{\space\space\space\space}}
