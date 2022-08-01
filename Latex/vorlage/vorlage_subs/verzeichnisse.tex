@@ -71,3 +71,14 @@
   \cofoot{}
   \rofoot{}
 }{}{}
+
+\DeclareNewTOC[
+  type=example,                         % Name der Umgebung
+  types=examples,                       % Erweiterung (\listofschemes)
+  float,                               % soll gleiten
+  tocentryentrynumberformat=\bfseries, % voreingestellte Gleitparameter
+  name=Beispiel,                         % Name in Überschriften
+  listname={Beispielverzeichnis},        % Listenname
+  % counterwithin=chapter
+]{lob}
+\setuptoc{lob}{totoc}
