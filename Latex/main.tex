@@ -12,12 +12,8 @@
 %! Inhalt der Arbeit
 \frontmatter
 
-%! automatische Auswahl der Titelseite
-\ifthenelse{\isundefined{\autorzwei}}{\include{vorlage/Titelseite_1Autor}}{\include{vorlage/Titelseite_mehrere_Autoren}}
-\ifthenelse{\isundefined{\sperre}}{}{\include{vorlage/Sperrvermerk}}
-
-\ifthenelse{\isundefined{\jahr}}{}{\input{vorlage/Platzhalter_Themenblatt}}
-
+\include{inhalt/Titelseite}
+\lofoot{\textnormal{Version 5.1}}
 %! Nicht benötigte Verzeichnisse hier auskommentieren
 %? Inhaltsverzeichnis
 \vfuzz=5pt
@@ -33,16 +29,19 @@
 \listoftables
 \newpage
 
-%? Programmcodeverzeichnis
-\listofcodes
-\newpage
-
 %? Formelverzeichnis
 \listofformeln
 \newpage
 
 %? Abkürzungsverzeichnis
 \include{inhalt/Abkürzungen}
+
+%? Beispielverzeichnis
+\listofexamples
+\newpage
+
+%? Begleitwort
+\include{inhalt/Begleitwort}
 
 %! Hier beginnt der eigentliche Inhalt der Arbeit.
 \mainmatter
@@ -58,7 +57,10 @@
 %\include{inhalt/Inhalt}
 
 %! Doku-/Testinhalt, diese Zeile bei Nutzung der Vorlage entfernen
-\include{vorlage/Doku-Test}
+\include{inhalt/Zielsetzung}
+\include{inhalt/ThemensucheVergabe}
+\include{inhalt/FormaleGestaltung}
+\include{inhalt/WeitereHinweise}
 
 %? Quellen- und Literaturverzeichnis
 % Quellen neigen dazu, zu breite Zeilen durch (z.B.) schlecht umgebrochene URLs zu erzeugen, die sich kaum vermeiden lassen. --> Ignorieren

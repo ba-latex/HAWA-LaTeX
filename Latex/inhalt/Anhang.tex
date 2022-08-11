@@ -36,28 +36,108 @@
     \label{#4}
     \end{figure}}
 
-%! CD-Inhalt
-\chapter{Inhalt der CD}
-\label{cd-inhalt}
-CD mit folgenden Inhalten:
-\begin{itemize}
-    \item dieses Dokument
-    \item \LaTeX -Dateien
-    \item \href{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{YouTube-Video} als Bonus
-\end{itemize}
+\chapter{Deckblatt für wissenschaftliche Arbeiten}
+\label{anhang-deckblatt}
+\begin{center}
+    \textbf{\LARGE \begin{center}Projektarbeit/Praxisarbeit/\\Studienarbeit/Bachelorthesis/\\Diplomarbeit\end{center}}
+    \LARGE{Thema der Arbeit \\}
+    \vspace{1.0cm}
+    \end{center}
+    \begin{flushleft}
+    \large{
+    \begin{tabular}{l l r}
+    \vspace{0.7cm}
+    \textbf{Vorgelegt am:}\quad\quad\quad & \abgabedatum\\
+    \textbf{Von:}           ~ & \textbf{Vorname Nachname}\\
+    ~ & \autorstrasse \\
+    \vspace{0.7cm}
+    ~ & \autorort \\
+    \textbf{Studiengang:}   ~ & \studiengang \\
+    \vspace{0.7cm}
+    \textbf{Studienrichtung:} ~ & \studienrichtung \\
+    \vspace{0.7cm}
+    \textbf{Seminargruppe:} ~ & \seminargruppe \\
+    \vspace{0.7cm}
+    \textbf{Matrikelnummer:} ~ & \matnumeins \\
+    \textbf{Praxispartner:} ~ & \institutioneins \\
+    ~ & \partnerstrasse \\
+    \vspace{0.7cm}
+    ~ & \partnerort \\
+    \textbf{Gutachter:}     ~ & \betreuereins \\ ~ & (\institutioneins)\\
+                            ~ & \betreuerzwei \\ ~ & (\institutionzwei)\\
+    \vspace{0.7cm}
+    \end{tabular}}
+    \end{flushleft}
 \clearpage
 
-% Warnungen für vorgefertigte Dokumente deaktivieren
+\chapter{Themenvorschlag für die Projektarbeit}
+\label{anhang-themenvorschlag-projekt}
+\includegraphics[scale=0.8]{Anhang/4BA-F.212_Themenvorschlag_für_die_Projektarbeit_ausfüllbar.pdf}
+%TODO skalierung
+\clearpage
+
+\chapter{Themenvorschlag für die Bachelorthesis/Diplomarbeit}
+\label{anhang-themenvorschlag-bt-dipl}
+\includegraphics[scale=0.8]{Anhang/4BA-F.215_Themenvorschlag_für_die_Bachelor-Thesis_ausfüllbar.pdf}
+%TODO skalierung
+\clearpage
 \hbadness=10000
-% automatische Auswahl der Erklärungen
-\ifthenelse{\isundefined{\autorzwei}}{\input{vorlage/Erklärung/1Autor}}{%
-    \ifthenelse{\isundefined{\autordrei}}{\input{vorlage/Erklärung/2Autoren}}{%
-        \ifthenelse{\isundefined{\autorvier}}{\input{vorlage/Erklärung/3Autoren}}{\input{vorlage/Erklärung/4Autoren}}
+
+\input{vorlage/Erklärung/1Autor}
+\clearpage
+
+\input{vorlage/Freigabeerklärung_Bachelorthesis}
+\clearpage
+
+\chapter{Beispiel/Muster Abstract}
+\label{anhang-abstract}
+\begin{minipage}{0.5\columnwidth}
+    \includesvg[width=\columnwidth]{vorlage/bilder/ba-gc-logo}
+    %\includegraphics[width=\columnwidth]{vorlage/bilder/ba-gc-logo}
+\end{minipage}
+\begin{minipage}{0.45\columnwidth}
+    \begin{flushright}
+        {\small nach 4BA-F.258\\}
+        %! hier Firmenlogo aktivieren!
+        %\includesvg[height=10mm,inkscapelatex=false]{bilder/firmenlogo}
+        %\includegraphics[height=10mm]{bilder/firmenlogo}
+    \end{flushright}
+\end{minipage}
+\par\noindent\rule{\columnwidth}{.5pt}
+
+\textbf{\Large{Abstract zur Bachelorthesis}}
+\begin{table}[H]
+    \centering
+    \fontsize{14pt}{15pt}
+    \begin{tabularx}{\columnwidth}{p{3.3cm} X}
+        \textbf{Studiengang:}               & \studiengang \\
+        \textbf{Name:}                      & \autoreins \\
+        \textbf{Thema:}                     & \titel \\
+        \textbf{Jahr:}                      & 2022 \\
+        \textbf{Betreuer:}                  & \begin{tabular}{@{}ll@{}}
+                                                  \betreuereins&\small(\institutioneins)\normalsize\\
+                                                  \betreuerzwei&\small(\institutionzwei)\normalsize\\
+                                              \end{tabular}\\
+    \end{tabularx}
+\end{table}
+\fbox{
+    \centering
+    \parbox{0.95\columnwidth}{
+        \textbf{Ziel}\\
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\\
+
+        \textbf{Methodik}\\
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\\
+
+        \textbf{Ergebnisse}\\
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\\
+
+        \textbf{Schlussfolgerung}\\
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.\\
+
+        \textbf{Schlüsselwörter}\\
+        Lorem, ipsum, dolor, sit, amet
     }
 }
 
-%  Freigabeerklärung zur Bachelorthesis
-%! Falls nötig (z.B. bei Diplomarbeit) innerhalb der Datei Wortlaut anpassen, sowie Freigabeerklärung anpassen (erfordert Format Name, Vorname usw.)
-\ifthenelse{\isundefined{\jahr}}{}{\input{vorlage/Freigabeerklärung_Bachelorthesis}}
-% Warnungen zurücksetzen
 \hbadness=1000
